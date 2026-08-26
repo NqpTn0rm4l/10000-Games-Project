@@ -6,15 +6,28 @@ using UnityEngine.UI;
 
 public class ChangeScenes : MonoBehaviour
 {
-    private Button sceneOneButton;
+    public void Play()
+    {
+        SceneChangerController.LoadScene(1);
+    }
 
-    private void Start()
+    public void Restart()
     {
-        sceneOneButton = GetComponent<Button>();
-        sceneOneButton.onClick.AddListener(OnSceneOneButtonClicked);
+        SceneChangerController.Restart();
     }
-    public void ChangeScene()
+
+    public void SceneLoad(int sceneIndex)
     {
-        SceneManager.LoadScene(1);
+        SceneChangerController.LoadScene(sceneIndex);
     }
+
+    public void Credit()
+    {
+        SceneChangerController.LoadScene(2);
+    }
+
+    /*public void BackSpace()
+    {
+        SceneChangerController.
+    }*/
 }
